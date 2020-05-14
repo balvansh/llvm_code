@@ -1,0 +1,25 @@
+Dominators
+
+make clean
+make
+opt -load ./dominators.so -dominators ./licm_tests/licm_test1.bc -o out
+opt -load ./dominators.so -dominators ./licm_tests/licm_test2.bc -o out
+opt -load ./dominators.so -dominators ./licm_tests/licm_test3.bc -o out
+
+
+Dead Code Elimination pass:
+
+make clean
+make
+opt -load ./dead-code-elimination.so -dead-code-elimination ./dce_tests/dce_test1.bc -o out
+opt -load ./dead-code-elimination.so -dead-code-elimination ./dce_tests/dce_test2.bc -o out
+
+Loop Invariant Code Elimination
+
+make clean
+make
+opt -load ./loop_invariant_code_motion.so -loop-invariant-code-motion ./licm_tests/licm_test1.bc -o out
+opt -load ./loop_invariant_code_motion.so -loop-invariant-code-motion ./licm_tests/licm_test2.bc -o out
+opt -load ./loop_invariant_code_motion.so -loop-invariant-code-motion ./licm_tests/licm_test3.bc -o out
+
+
